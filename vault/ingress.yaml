@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vault-ingress
+  namespace: vault
+  annotations:
+    certmanager.k8s.io/cluster-issuer: vault-issuer
+    
+#    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+    - hosts:
+      - vault.local
+      secretName: vault-tls
+  rules:
+    - host: "vault.local"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: vault-internal
+                port:
+                  number: 8200
