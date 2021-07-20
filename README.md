@@ -1,5 +1,5 @@
-# k8s
-Reloader
+### k8s
+# Reloader
 
 reloader.yaml - Reloader - утилита для перезагрузки сервиса после изменения comfigMap. Образ на DockerHub.
 
@@ -8,14 +8,14 @@ reloader.yaml - Reloader - утилита для перезагрузки сер
     Переменная среды окружения KUBERNETES_NAMESPACE. Если не определена, работает со всеми namespace кластера.
     Аргумент командной строки --namespaces-to-ignore - можно перечислить через запятую имена namespace, которые программа будет игнорировать.
 
-Metrics server
+# Metrics server
 
 Metrics Server - собирает метрики по использованию CPU и RAM. Добавляет metrics API, используемый в инструментах горизонтального масштабирования подов.
 
 metrics-server.yaml
 
 
-Cert-manager
+# Cert-manager
 
 cert-manager - утилита для управления сертификатами.
 
@@ -24,7 +24,7 @@ kubectl get pods --namespace cert-manager
 
 Namespace cert-manager создаётся автоматически.
 
-Persistent Volumes
+# Persistent Volumes
 
 https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner
 
